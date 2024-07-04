@@ -9,4 +9,4 @@ class Sound:
 
     # Methods which plays the sound when piece is moved
     def play(self):
-        pygame.mixer.Sound().play(self.sound)
+        pygame.mixer.Sound.play(self.sound)
