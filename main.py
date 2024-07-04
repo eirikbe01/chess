@@ -23,6 +23,7 @@ class Main:
         while True:
             # Show methods
             game.show_board(screen)
+            game.show_last_move(screen)
             game.show_moves(screen)
             game.show_pieces(screen)
 
@@ -48,6 +49,7 @@ class Main:
         
                         # Show methods
                         game.show_board(screen)
+                        game.show_last_move(screen)
                         game.show_moves(screen)
                         game.show_pieces(screen)
                 # Moving mouse
@@ -56,6 +58,7 @@ class Main:
                         dragger.update_mouse(event.pos)
                         # Show methods
                         game.show_board(screen)
+                        game.show_last_move(screen)
                         game.show_moves(screen)
                         game.show_pieces(screen)
                         dragger.update_blit(screen)
@@ -77,9 +80,21 @@ class Main:
                             board.move(dragger.piece, move)
                             # show methods
                             game.show_board(screen)
+                            game.show_last_move(screen)
                             game.show_pieces(screen)
                             game.next_turn()
                     dragger.undrag_piece()
+                
+                # key press
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_t:
+                        game.change_theme()
+                    if event.key == pygame.K_r:
+                        game.restart()
+                        game = self.game
+                        board = self.game.board
+                        dragger = self.game.dragger
+
 
                 if event.type == pygame.QUIT:
                     pygame.quit()
