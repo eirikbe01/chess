@@ -1,2 +1,2 @@
 # chess
-Chess with either AI opponent or human opponent
+Chess game like chess.com, in progress.
