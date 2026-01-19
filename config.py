@@ -11,8 +11,12 @@ class Config:
         self.idx = 0
         self.theme = self.themes[self.idx]
         self.font = pygame.font.SysFont('monospace', 18, bold=True)
+        self.start_sound = Sound(os.path.join('assets/sounds/chess_start.wav'))
         self.move_sound = Sound(os.path.join('assets/sounds/move.wav'))
         self.capture_sound = Sound(os.path.join('assets/sounds/capture.wav'))
+        self.castling_sound = Sound(os.path.join('assets/sounds/castling.wav'))
+        self.check_sound = Sound(os.path.join('assets/sounds/check.wav'))
+        self.checkmate_sound = Sound(os.path.join('assets/sounds/checkmate.wav'))
 
 
 

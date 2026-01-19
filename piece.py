@@ -16,16 +16,19 @@ class Piece:
         self.set_texture()
         self.texture_rect = texture_rect
 
+    def __str__(self):
+        return f"{self.color} {self.name}"
+
     # Sets the different images of the pieces
-    def set_texture(self, size=80):
+    def set_texture(self, size=80) -> None:
         self.image_url = os.path.join(
             f"assets/images/imgs-{size}px/{self.color}_{self.name}.png"
         )
     
-    def add_moves(self, move):
+    def add_moves(self, move) -> None:
         self.valid_moves.append(move)
     
-    def clear_moves(self):
+    def clear_moves(self) -> None:
         self.valid_moves = []
 
 # The different pieces inherits the Piece class
@@ -35,6 +38,7 @@ class Pawn(Piece):
             self.dir = -1
         else:
             self.dir = 1
+        self.en_passant = False
         super().__init__("pawn", color, 1.0)
 
 class Knight(Piece):

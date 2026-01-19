@@ -4,6 +4,7 @@ from board import Board
 from dragger import Dragger
 from config import Config
 from square import Square
+from sound import Sound
 
 class Game:
 
@@ -103,8 +104,6 @@ class Game:
                 #blit
                 pygame.draw.rect(surface, color, rect)
     
-
-
     def next_turn(self):
         self.next_player = 'white' if self.next_player == 'black' else 'black'
     
@@ -116,11 +115,14 @@ class Game:
             self.config.capture_sound.play()
         else:
             self.config.move_sound.play()
-    
+
+    def play_check(self):
+        self.config.check_sound.play()
+
     def restart(self):
         self.__init__()
+        self.config.start_sound.play()
 
 
                 
-
 
