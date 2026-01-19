@@ -211,7 +211,7 @@ class Board:
                                 # append new valid move
                                 piece.add_moves(move)
                             else:
-                                break
+                                continue
                         else:
                             piece.add_moves(move)
                         
